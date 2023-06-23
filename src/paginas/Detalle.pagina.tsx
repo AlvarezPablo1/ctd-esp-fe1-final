@@ -26,13 +26,11 @@ const PaginaDetalle = () => {
                     <p>Planeta: Earth</p>
                     <p>Genero: Male</p>
                 </div>
-                <BotonFavorito esFavorito={false} />
+                {/* <BotonFavorito esFavorito={false} /> */}
             </div>
         </div>
         <h4>Lista de episodios donde apareció el personaje</h4>
         <div className={"episodios-grilla"}>
-            <TarjetaEpisodio />
-            <TarjetaEpisodio />
             <TarjetaEpisodio />
         </div>
     </div>

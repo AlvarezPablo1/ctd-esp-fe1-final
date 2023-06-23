@@ -14,7 +14,6 @@ const PaginaFavoritos = () => {
             <h3>Personajes Favoritos</h3>
             <button className="danger">Test Button</button>
         </div>
-        <GrillaPersonajes />
     </div>
 }
 

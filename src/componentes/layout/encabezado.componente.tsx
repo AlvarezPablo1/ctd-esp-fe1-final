@@ -8,7 +8,7 @@ import './encabezado.css';
  *
  * @returns {JSX.Element}
  */
-const Encabezado = () => {
+const Encabezado = (): JSX.Element => {
 
     return <header>
             <div>
