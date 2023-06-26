@@ -17,6 +17,10 @@ header > div h2{
   margin: 0
 }
 
+header h2{
+  cursor: pointer;
+}
+
 header > div nav ul {
   display: flex;
   flex-direction: row;

@@ -16,7 +16,6 @@ const PaginaInicio = () => {
     const {characters, isLoading} = useAppSelector((state) => state.characters)
     const dispatch = useAppDispatch();
 
-
     return <div className="container">
         <div className="actions">
             <h3>Catálogo de Personajes</h3>
@@ -27,9 +26,6 @@ const PaginaInicio = () => {
         {isLoading ?( "cargando...") : (
             <GrillaPersonajes characters={characters}/>
         )}
-        
-        
-        
         <Paginacion />
     </div>
 }

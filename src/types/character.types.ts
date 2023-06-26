@@ -8,9 +8,9 @@ export interface Character {
   episodes?: string[],
 }
 
-interface Episode{
+export interface Episode{
   id: number,
-  titulo: string,
-  fecha: string,
-  episodio: string,
+  title: string,
+  date: string,
+  episode: string,
 }

@@ -17,9 +17,6 @@ interface CharacterGridProps {
 }
 
 const GrillaPersonajes = ({characters}: CharacterGridProps) => {
-
-
-
     
     return <div className="grilla-personajes">
         {
