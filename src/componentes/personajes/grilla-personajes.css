@@ -4,3 +4,22 @@
   grid-gap: 20px;
   justify-items: center;
 }
+
+
+@media(max-width: 1024px){
+  .grilla-personajes{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width: 768px){
+  .grilla-personajes{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 425px){
+  .grilla-personajes{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

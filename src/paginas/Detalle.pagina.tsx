@@ -1,5 +1,5 @@
 import "./Detalle.css";
-import BotonFavorito from "../componentes/botones/boton-favorito.componente";
+// import BotonFavorito from "../componentes/botones/boton-favorito.componente";
 import TarjetaEpisodio from "../componentes/episodios/tarjeta-episodio.componente";
 
 /**

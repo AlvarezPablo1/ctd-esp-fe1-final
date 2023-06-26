@@ -1,3 +1,5 @@
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { fetchNextCharacters, fetchPrevCharacters } from '../../redux/slices/characterReducer';
 import './paginacion.css';
 
 /**
@@ -9,10 +11,12 @@ import './paginacion.css';
  * @returns un JSX element 
  */
 const Paginacion = () => {
+    const {next, prev} = useAppSelector((state) => state.characters)
+    const dispatch = useAppDispatch();
 
     return <div className="paginacion">
-        <button disabled={true} className={"primary"}>Anterior</button>
-        <button disabled={false} className={"primary"}>Siguiente</button>
+        <button className={"primary"} disabled={prev == null} onClick={() => dispatch(fetchPrevCharacters())}>Anterior</button>
+        <button className={"primary"} disabled={next == null} onClick={() => dispatch(fetchNextCharacters())}>Siguiente</button>
     </div>
 }
 

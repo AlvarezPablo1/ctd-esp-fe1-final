@@ -56,3 +56,9 @@ button.danger {
         max-width: 100%;
     }
 }
+
+@media(max-width: 425px){
+    h2{
+        display: none;
+    }
+  }

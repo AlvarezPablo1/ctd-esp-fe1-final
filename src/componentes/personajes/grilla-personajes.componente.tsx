@@ -1,3 +1,5 @@
+
+import { Character } from '../../types/character.types';
 import './grilla-personajes.css';
 import TarjetaPersonaje from './tarjeta-personaje.componente';
 
@@ -9,11 +11,23 @@ import TarjetaPersonaje from './tarjeta-personaje.componente';
  * 
  * @returns un JSX element 
  */
-const GrillaPersonajes = () => {
 
+interface CharacterGridProps {
+    characters : Array<Character>
+}
+
+const GrillaPersonajes = ({characters}: CharacterGridProps) => {
+
+
+
+    
     return <div className="grilla-personajes">
-        <TarjetaPersonaje />
+        {
+            characters.map((character) =>(
+                <TarjetaPersonaje key={character.id} character={character}/>
+            ))
+        }
     </div>
 }
 
-export default GrillaPersonajes;
+export default GrillaPersonajes
