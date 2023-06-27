@@ -36,9 +36,6 @@ export const getCharactersByPage = async (url: string) => {
   return data
 }
 
-
-
-
 export const getCharacters = async () => {
   return getCharactersByPage(`https://rickandmortyapi.com/api/character/?page=1`)
 }
@@ -47,11 +44,26 @@ export const getfilterCharacter = async (filter: string) => {
   return getCharactersByPage(`https://rickandmortyapi.com/api/character/?name=${filter}&page=1`)
 }
 
+
+export const getCharactersByArray = async (array: number[]) => {
+  let data = []
+  if (array.length > 0) {
+      const response = await axios(`https://rickandmortyapi.com/api/character/${String(array)}`)
+          .then((response) => response.data)
+      if (response.length > 0) {
+          data = mapCharacter(response)
+      } else {
+          data = mapCharacter([response])
+      }
+  }
+  return data
+}
+
 export const getEpisodesByArray = async (array: number[]) => {
   let data = []
   if (array.length > 0) {
-      const response = await fetch(`https://rickandmortyapi.com/api/episode/${String(array)}`)
-          .then((response) => response.json())
+      const response = await axios(`https://rickandmortyapi.com/api/episode/${String(array)}`)
+          .then((response) => response.data)
       if (response.length > 0) {
           data = mapEpisode(response)
       } else {

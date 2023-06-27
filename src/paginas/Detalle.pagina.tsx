@@ -3,6 +3,8 @@ import "./Detalle.css";
 import TarjetaEpisodio from "../componentes/episodios/tarjeta-episodio.componente";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { Link } from "react-router-dom";
+import { fetchToggleFavorite } from "../redux/slices/favoriteReducer";
+import BotonFavorito from "../componentes/botones/boton-favorito.componente";
 
 /**
  * Esta es la pagina de detalle. Aqui se puede mostrar la vista sobre el personaje seleccionado junto con la lista de episodios en los que aparece
@@ -19,7 +21,8 @@ import { Link } from "react-router-dom";
 const PaginaDetalle = () => {
     
     const { character, episodes, isLoading } = useAppSelector(state => state.detail)
-
+    const {list} = useAppSelector((state) => state.favorite)
+    const dispatch = useAppDispatch()
 
     if (character.id === -1) return <div className="container">
         <h3>Seleccione un personaje para ver sus datos</h3>
@@ -36,6 +39,7 @@ const PaginaDetalle = () => {
                     <p>Planeta: {character.location}</p>
                     <p>Genero: {character.gender}</p>
                 </div>
+                <BotonFavorito onClick={() => dispatch(fetchToggleFavorite(character.id))} isFavorite={list.includes(character.id)} />
             </div>
         </div>
         <h4>Lista de episodios donde apareció el personaje</h4>

@@ -13,7 +13,7 @@ import TarjetaPersonaje from './tarjeta-personaje.componente';
  */
 
 interface CharacterGridProps {
-    characters : Array<Character>
+    characters : Character[]
 }
 
 const GrillaPersonajes = ({characters}: CharacterGridProps) => {

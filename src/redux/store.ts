@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import characterReducer from "./slices/characterReducer";
 import detailReducer from "./slices/detailReducer";
+import favoriteReducer from "./slices/favoriteReducer";
 
 
 const store = configureStore({
   reducer: {
       characters: characterReducer,
-      detail: detailReducer
+      detail: detailReducer,
+      favorite: favoriteReducer
   }
 });
 

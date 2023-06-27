@@ -8,9 +8,11 @@ import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { useEffect } from "react";
 import { fetchCharacters } from "./redux/slices/characterReducer";
 import { fetchEpisodes } from "./redux/slices/detailReducer";
+import { fetchFavorite, fetchFavoritesCharacters } from "./redux/slices/favoriteReducer";
 
 function App() {
   const {character} = useAppSelector((state) => state.detail)
+  const {list} = useAppSelector((state) => state.favorite)
   const dispatch = useAppDispatch();
 
   useEffect(() =>{
@@ -21,7 +23,14 @@ function App() {
     dispatch(fetchEpisodes())
 },[character])
 
+  useEffect(() => {
+    dispatch(fetchFavorite())
+}, [])
 
+  useEffect(() => {
+    dispatch(fetchFavoritesCharacters())
+},[list])
+  
   return (
     <div className="App">
       <Encabezado />
