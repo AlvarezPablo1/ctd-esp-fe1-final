@@ -2,10 +2,12 @@
   "name": "ctd-esp-fe1-final",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://AlvarezPablo1.github.io/ctd-esp-fe1-final",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "D": "^1.0.0",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.1",
@@ -14,6 +16,8 @@
     "web-vitals": "^3.1.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages –d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
