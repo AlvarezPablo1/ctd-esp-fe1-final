@@ -1,5 +1,6 @@
 import axios from "axios"
 import { InitialState} from "../redux/slices/characterReducer"
+import { GET_CHARACTER_BY_PAGE, GET_EPISODES_BY_CHARACTER, GET_SINGLE_CHARACTER } from "./api"
 
 const mapCharacter = (characterToMap : any) => {
   return characterToMap.map((character : any) => ({
@@ -37,18 +38,18 @@ export const getCharactersByPage = async (url: string) => {
 }
 
 export const getCharacters = async () => {
-  return getCharactersByPage(`https://rickandmortyapi.com/api/character/?page=1`)
+  return getCharactersByPage(GET_CHARACTER_BY_PAGE)
 }
 
 export const getfilterCharacter = async (filter: string) => {
-  return getCharactersByPage(`https://rickandmortyapi.com/api/character/?name=${filter}&page=1`)
+  return getCharactersByPage(`${GET_SINGLE_CHARACTER}?name=${filter}&page=1`)
 }
 
 
 export const getCharactersByArray = async (array: number[]) => {
   let data = []
   if (array.length > 0) {
-      const response = await axios(`https://rickandmortyapi.com/api/character/${String(array)}`)
+      const response = await axios(`${GET_SINGLE_CHARACTER}${String(array)}`)
           .then((response) => response.data)
       if (response.length > 0) {
           data = mapCharacter(response)
@@ -62,7 +63,7 @@ export const getCharactersByArray = async (array: number[]) => {
 export const getEpisodesByArray = async (array: number[]) => {
   let data = []
   if (array.length > 0) {
-      const response = await axios(`https://rickandmortyapi.com/api/episode/${String(array)}`)
+      const response = await axios(`${GET_EPISODES_BY_CHARACTER}${String(array)}`)
           .then((response) => response.data)
       if (response.length > 0) {
           data = mapEpisode(response)

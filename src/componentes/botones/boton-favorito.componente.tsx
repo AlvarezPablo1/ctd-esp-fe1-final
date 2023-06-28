@@ -5,6 +5,7 @@ interface CharacterFavoriteProps{
     isFavorite: boolean
     onClick: () => void
 }
+
 /**
  * Boton que indica si un elemento es favorito o no, y da la posibilidad de marcarlo/desmarcarlo
  * 

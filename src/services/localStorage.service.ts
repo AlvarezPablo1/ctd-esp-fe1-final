@@ -1,3 +1,6 @@
+
+
+/* */
 export const getFavFromStorage = () => {
   const favorites = localStorage.getItem('favs')
   if (favorites) {
