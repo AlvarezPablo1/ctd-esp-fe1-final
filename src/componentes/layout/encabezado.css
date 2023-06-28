@@ -1,7 +1,7 @@
 header {
   background-color: white;
   border-bottom: 1px solid #d0d0d0;
-  width: calc(100% - 60px);
+  width: 100%;
   color: black;
   padding: 25px 30px;
 }
