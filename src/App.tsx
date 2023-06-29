@@ -10,6 +10,12 @@ import { fetchCharacters } from "./redux/slices/characterReducer";
 import { fetchEpisodes } from "./redux/slices/detailReducer";
 import { fetchFavorite, fetchFavoritesCharacters } from "./redux/slices/favoriteReducer";
 
+/**
+ * PAGINA PRINCIPAL DE LA APLICACION
+ * 
+ * @author Pablo Alvarez
+ * @returns un jsx element
+ */
 function App() {
   const {character} = useAppSelector((state) => state.detail)
   const {list} = useAppSelector((state) => state.favorite)

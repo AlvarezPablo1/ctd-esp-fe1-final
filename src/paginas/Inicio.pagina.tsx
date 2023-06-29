@@ -5,12 +5,10 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { resetFilter } from "../redux/slices/characterReducer";
 
 /**
- * Esta es la pagina principal. Aquí se debera ver el panel de filtros junto con la grilla de personajes.
+ *  SE MUESTRA TANTO EL BUSCADOR COMO LA GRILLA DE PERSONAJES
  * 
- * Uso: 
- * ``` <PaginaInicio /> ```
- * 
- * @returns la pagina de inicio
+ * @author Pablo Alvarez
+ * @returns un jex element sobre la pagina de inicio
  */
 const PaginaInicio = () => {
     const {characters, isLoading} = useAppSelector((state) => state.characters)

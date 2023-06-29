@@ -6,12 +6,11 @@ interface EpisodeProps{
 }
 
 /**
- * @author
- * Tarjeta para cada episodio dentro de la vista de personaje.
- * Deberás agregar las propiedades necesarias para mostrar los datos de los episodios
+ * TARJETA QUE MUESTRA LA INFO DE CADA CAPITULO EN EL QUE UN PERSONAJE ESPECIFICO APARECIO
  * 
- * 
- * @returns un JSX element 
+ * @author Pablo Alvarez
+ * @param {object} episode - Objeto de tipo Episode (interface) con la información necesaria a renderizar en la pagina cuando se seleccione un personaje en particular
+ * @returns un JSX element
  */
 const TarjetaEpisodio = ({episode}: EpisodeProps) => {
 

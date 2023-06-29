@@ -7,16 +7,10 @@ import { fetchToggleFavorite } from "../redux/slices/favoriteReducer";
 import BotonFavorito from "../componentes/botones/boton-favorito.componente";
 
 /**
- * Esta es la pagina de detalle. Aqui se puede mostrar la vista sobre el personaje seleccionado junto con la lista de episodios en los que aparece
+ * PAGINA QUE MUESTRA EL DETALLE DE CADA PERSONAJE MÁS LOS EPISODIOS EN LOS QUE APARECIO
  * 
- * EL TRABAJO SOBRE ESTE ARCHIVO ES OPCIONAL Y NO ES REQUISITO DE APROBACION
- * 
- * 
- * 
- * Uso: 
- * ``` <PaginaDetalle /> ```
- * 
- * @returns la pagina de detalle
+ * @author Pablo Alvarez
+ * @returns un jsx element sobre la pagina de detalle
  */
 const PaginaDetalle = () => {
     
@@ -24,6 +18,7 @@ const PaginaDetalle = () => {
     const {list} = useAppSelector((state) => state.favorite)
     const dispatch = useAppDispatch()
 
+    /*Si el array de personajes del detailReducer esta vacio, muestra este texto pre-definido */
     if (character.id === -1) return <div className="container">
         <h3>Seleccione un personaje para ver sus datos</h3>
         <Link to={'/'}>Ver listado</Link>

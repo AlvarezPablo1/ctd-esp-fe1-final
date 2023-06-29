@@ -3,19 +3,17 @@ import { Character } from '../../types/character.types';
 import './grilla-personajes.css';
 import TarjetaPersonaje from './tarjeta-personaje.componente';
 
-/**
- * Grilla de personajes para la pagina de inicio
- * 
- * Deberás agregar las funciones necesarias para mostrar y paginar los personajes
- * 
- * 
- * @returns un JSX element 
- */
-
 interface CharacterGridProps {
     characters : Character[]
 }
 
+/**
+ * GRILLA EN DONDE SE RENDERIZAN LOS PERSONAJES
+ * 
+ * @author Pablo Alvarez
+ * @param {object} characters -array de objetos de tipo Character (interface) para darle los valores necesarios a *TarjetaPersonaje* y poder renderizar las cards con la informacion necesaria
+ * @returns un JSX element 
+ */
 const GrillaPersonajes = ({characters}: CharacterGridProps) => {
     
     return <div className="grilla-personajes">

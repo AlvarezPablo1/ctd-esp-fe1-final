@@ -7,12 +7,12 @@ interface CharacterFavoriteProps{
 }
 
 /**
- * Boton que indica si un elemento es favorito o no, y da la posibilidad de marcarlo/desmarcarlo
+ * BOTON QUE ACTIVA EL GUARDADO/ELIMINACION EN EL LOCALSTORAGE DE LOS PERSONJES QUE SEAN MARCADOS/DESMARCADOS COMO FAVORITOS
  * 
- * Deberás tipar las propiedades si usas este componente
- * 
- * 
- * @returns un JSX element 
+ * @author Pablo Alvarez
+ * @param {boolean} isFavorite - Dependiendo si es verdadero o falso, cambia el boton de favoritos o no
+ * @param {onclick} onClick - El encargado de disparar la action correspondiente cuando se clickea el boton 
+ * @returns JSX element 
  */
 const BotonFavorito = ({isFavorite, onClick}: CharacterFavoriteProps) => {
     const src = isFavorite ? "/imagenes/star-filled.png" : "/imagenes/star.png";

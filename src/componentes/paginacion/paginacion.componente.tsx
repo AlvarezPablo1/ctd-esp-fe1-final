@@ -3,11 +3,9 @@ import { fetchNextCharacters, fetchPrevCharacters } from '../../redux/slices/cha
 import './paginacion.css';
 
 /**
- * Componente que contiene los botones para paginar
+ * CONTIENE LOS BOTONES NECESARIOS PARA CAMBIAR DE PAGINA ENTRE LOS PERSONAJES
  * 
- * Deberás agregar las propiedades necesarias para que funcione correctamente
- * 
- * 
+ * @author Pablo Alvarez
  * @returns un JSX element 
  */
 const Paginacion = () => {

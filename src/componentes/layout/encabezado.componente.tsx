@@ -2,11 +2,10 @@ import {Link, useNavigate} from "react-router-dom";
 import './encabezado.css';
 
 /**
- * Encabezado que contiene los links para navegar entre las páginas
- *
- * Uso: `<Encabezado />`
- *
- * @returns {JSX.Element}
+    CONTIENE LOS LINKS PARA PODER NAVEGAR POR LA PAGINA
+
+    @author Pablo alvarez
+    @returns un jsx element
  */
 const Encabezado = (): JSX.Element => {
 

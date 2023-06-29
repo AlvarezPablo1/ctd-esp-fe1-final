@@ -12,11 +12,10 @@ interface CharacterProps{
     character: Character
 }
 /**
- * Tarjeta para cada personaje dentro de la grilla de personajes. 
+ * SE RENDERIZA CADA CARD DE LOS PARSONAJES CON LA INFORMACION RECIBIDA DE *GRILLA-PERSONAJES*
  * 
- * Deberás agregar las propiedades necesarias para mostrar los datos de los personajes
- * 
- * 
+ * @author Pablo Alvarez
+ * @param {object} character - objeto de tipo Character (interface) con la informacion necesaria para cada personaje
  * @returns un JSX element 
  */
 const TarjetaPersonaje = ({character} : CharacterProps) => {
@@ -24,16 +23,18 @@ const TarjetaPersonaje = ({character} : CharacterProps) => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate()
 
+    /*Funcion que redirije a la vista en detalle de cada personaje */
     const viewDetail = () => {
         dispatch(setDetail(character))
         navigate("/detalle")
     }
-
+    /*Funcion que dispara la funcion que agrega/borra un personaje de favoritos */
     const onClickFavorite = () => {
         dispatch(fetchToggleFavorite(character.id))
     }
 
     const isFavorite = list.includes(character.id)
+
     return ( 
         <div className="tarjeta-personaje">
             <img  src={character.image} alt={character.name} onClick={() => viewDetail()}/>
